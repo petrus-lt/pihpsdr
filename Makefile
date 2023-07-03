@@ -14,13 +14,13 @@ GIT_VERSION := $(shell git describe --abbrev=0 --tags)
 #    CONTROLLER2_V1 single encoders with MCP23017 switches
 #    CONTROLLER2_V2 dual encoders with MCP23017 switches
 #
-GPIO_INCLUDE=GPIO
+#GPIO_INCLUDE=GPIO
 
 # uncomment the line below to include Pure Signal support
 PURESIGNAL_INCLUDE=PURESIGNAL
 
 # uncomment the line below to include MIDI support
-#MIDI_INCLUDE=MIDI
+MIDI_INCLUDE=MIDI
 
 # uncomment the line below to include USB Ozy support
 # USBOZY_INCLUDE=USBOZY
@@ -48,6 +48,9 @@ PURESIGNAL_INCLUDE=PURESIGNAL
 
 # very early code not included yet
 #SERVER_INCLUDE=SERVER
+
+# uncomment the line below to force white menu backgrounds
+#GUI_OPTIONS+= -D FORCE_WHITE_MENU
 
 CC=gcc
 LINK=gcc
@@ -198,6 +201,7 @@ OPTIONS=$(SMALL_SCREEN_OPTIONS) $(MIDI_OPTIONS) $(PURESIGNAL_OPTIONS) $(REMOTE_O
         $(PTT_OPTIONS) \
 	$(SERVER_OPTIONS) \
 	$(AUDIO_OPTIONS) \
+	$(GUI_OPTIONS) \
 	-D GIT_DATE='"$(GIT_DATE)"' -D GIT_VERSION='"$(GIT_VERSION)"' $(DEBUG_OPTION)
 
 
