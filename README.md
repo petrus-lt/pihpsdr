@@ -10,4 +10,4 @@ Note: The latest source now code has the gpiod branch merged in and also require
 Local fixes and improvements:
 
 - [correct band for 10m action](https://github.com/petrus-lt/pihpsdr/commit/57a67671d8fb2c745102efda0f2fa71305a5eb87)
-
+- [ dark mode knob with "FORCE_WHITE_MENU" in makefile ](https://github.com/petrus-lt/pihpsdr/commit/2b47bd4d47f09276801883dd13a6879a207ba8c3à)
