@@ -8,6 +8,10 @@ GIT_VERSION := $(shell git describe --abbrev=0 --tags)
 # uncomment the following line to force 480x320 screen
 #SMALL_SCREEN_OPTIONS=-D SMALL_SCREEN
 
+# Define maximum window size.
+# standard values are 800 and 480: suitable for RaspberryBi 7-inch screen
+DISPLAY_SIZE=-DMAX_DISPLAY_WIDTH=800 -DMAX_DISPLAY_HEIGHT=480
+
 # uncomment the line below to include GPIO
 # For support of:
 #    CONTROLLER1 (Original Controller)
@@ -202,6 +206,7 @@ OPTIONS=$(SMALL_SCREEN_OPTIONS) $(MIDI_OPTIONS) $(PURESIGNAL_OPTIONS) $(REMOTE_O
 	$(SERVER_OPTIONS) \
 	$(AUDIO_OPTIONS) \
 	$(GUI_OPTIONS) \
+	$(DISPLAY_SIZE) \
 	-D GIT_DATE='"$(GIT_DATE)"' -D GIT_VERSION='"$(GIT_VERSION)"' $(DEBUG_OPTION)
 
 
